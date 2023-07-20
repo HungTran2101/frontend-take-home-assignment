@@ -36,7 +36,7 @@ export const CreateTodoForm = () => {
     })
 
   const handleCreateTodo = () => {
-    //Not in the question but i think this func need handle if todoBody is empty
+    //Not in the question but i think this func also need to handle if todoBody is empty
 
     createTodo({
       body: todoBody,
