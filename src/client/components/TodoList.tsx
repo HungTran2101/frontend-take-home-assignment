@@ -64,9 +64,13 @@ import { api } from '@/utils/client/api'
  *  - https://auto-animate.formkit.com
  */
 
-export const TodoList = () => {
+interface ITodoList {
+  statuses: ('completed' | 'pending')[]
+}
+
+export const TodoList = ({ statuses }: ITodoList) => {
   const { data: todos = [] } = api.todo.getAll.useQuery({
-    statuses: ['completed', 'pending'],
+    statuses,
   })
 
   const apiContext = api.useContext()
